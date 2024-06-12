@@ -7,6 +7,7 @@
  *
  * @author farel
  */
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 
@@ -26,7 +27,6 @@ initComponents();
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        bt_exit = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         password = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -36,8 +36,9 @@ initComponents();
         jLabel5 = new javax.swing.JLabel();
         regisb = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        pn_uta = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -55,14 +56,6 @@ initComponents();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bt_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_close_24px.png"))); // NOI18N
-        bt_exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_exitMouseClicked(evt);
-            }
-        });
-        jPanel1.add(bt_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, -1, -1));
 
         username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 255)));
         username.setCaretColor(new java.awt.Color(204, 204, 255));
@@ -123,14 +116,32 @@ initComponents();
 
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Dont have account ? ");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 120, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_close_24px.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel7MouseExited(evt);
+            }
+        });
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 190, 350));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/Screenshot 2024-05-20 195945.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, -10, 500, 450));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 30, 350));
+
+        pn_uta.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(pn_uta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 390, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,10 +156,6 @@ initComponents();
         int y = evt.getYOnScreen();
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_formMouseDragged
-
-    private void bt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_exitMouseClicked
-      dispose();
-    }//GEN-LAST:event_bt_exitMouseClicked
 
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
@@ -187,6 +194,18 @@ try {
         new regis() .setVisible(true);
     }//GEN-LAST:event_regisbActionPerformed
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
+          dispose();
+    }//GEN-LAST:event_jLabel7MouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+   
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -203,17 +222,17 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bt_exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton loginButton;
     private javax.swing.JTextField password;
+    private javax.swing.JPanel pn_uta;
     private javax.swing.JButton regisb;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
