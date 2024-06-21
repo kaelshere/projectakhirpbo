@@ -9,18 +9,18 @@ import javax.swing.JOptionPane;
 
 
 public class Config {
-    private static Connection conn;
+    private static Connection  mysql;
     public static Connection configDB()throws SQLException{
      try {
-        String url = "jdbc:mysql://localhost:3306/projectakhirpbo";
+        String url = "jdbc:mysql://localhost:3306/projectakhhirpbo";
         String user = "root";
         String pass = ""; 
-        DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-        conn = DriverManager.getConnection(url,user,pass);
+        DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+        mysql = DriverManager.getConnection(url, user, pass);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "koneksi gagal");
         }
-        return conn;
+        return mysql;
         
    
    }

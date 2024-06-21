@@ -130,7 +130,7 @@ initComponents();
         String pass = password.getText();
 
         // Check if the username already exists
-        String checkUserSql = "SELECT * FROM accoount WHERE Username = ?";
+        String checkUserSql = "SELECT * FROM accoount WHERE username = ?";
         java.sql.Connection conn = (Connection) Config.configDB();
         java.sql.PreparedStatement checkUserPst = conn.prepareStatement(checkUserSql);
         checkUserPst.setString(1, user);
@@ -142,7 +142,7 @@ initComponents();
         }
 
         // Proceed with registration if validations pass
-        String sql = "INSERT INTO accoount (Username, Password) VALUES (?, ?)";
+        String sql = "INSERT INTO accoount (username, password) VALUES (?, ?)";
         java.sql.PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, user);
         pst.setString(2, pass);
@@ -154,6 +154,7 @@ initComponents();
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+           dispose();
     }//GEN-LAST:event_regisActionPerformed
 
     private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed

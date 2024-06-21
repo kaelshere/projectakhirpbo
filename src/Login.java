@@ -7,7 +7,7 @@
  *
  * @author farel
  */
-import java.awt.Color;
+
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 
@@ -162,7 +162,7 @@ initComponents();
     }//GEN-LAST:event_passwordActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-
+ 
 
 try {
             String sql = "SELECT * FROM accoount WHERE Username ='" + username.getText() + "'AND Password ='" + password.getText()+"'";
